@@ -1,7 +1,8 @@
 // Promise<ExampleType>
 
-type A = Promise<string>;
+type A189 = Promise<string>;
 
-type getPromiseType<T> = T extends Promise<infer U> ? U : unknown;
+// type MyAwaited<P extends Promise<any>> = P extends Promise<infer A> ? A : unknown;
+type MyAwaited<T> = T extends Promise<infer U> ? U : unknown;
 
-type a = getPromiseType<A>;
+type a = MyAwaited<A189>;
